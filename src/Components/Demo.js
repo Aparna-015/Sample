@@ -1,7 +1,12 @@
-import React from "react";
-import Card from "./Card";
+import React, { useState } from "react";
 
 const Demo = () => {
+  const [viewdetails, setViewdetails] = useState(false);
+
+  const handleclick = () => {
+    setViewdetails(true);
+  };
+
   const data = [
     {
       id: 1,
@@ -22,13 +27,27 @@ const Demo = () => {
     <div className="container">
       {data.map((item) => (
         <div key={item.id}>
-          <h1>{item?.title}</h1>
+        <h1>{item?.title}</h1>
+        <img src={item?.image} alt="no-image" width="100px" /><br />
 
-          <img src={item?.image} alt="no-image" width="100px" /><br/>
-           <button >View more</button> 
-          <Card data={item} />
+
+          {
+
+         !viewdetails ? (
+            <button onClick={handleclick}>View more</button>
+          ) : (
+            <>
+              <h1>{item?.price}</h1>
+              <h1>{item?.description}</h1>
+              <h1>{item?.category}</h1>
+              <h1>{item?.rating?.rate}</h1>
+            </>
+          )
+          
+          }
         </div>
       ))}
+      
     </div>
   );
 };

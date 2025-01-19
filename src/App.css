@@ -54,12 +54,6 @@ button {
   background-color: rgb(63, 66, 132);
   margin-top: 20px;
 }
-.section {
-  width: 600px;
-  text-align: center;
-  background-color: burlywood;
-  margin-left: 80px;
-}
-h2 {
-  font-size: 15px;
+img{
+  background-color: blueviolet;
 }
