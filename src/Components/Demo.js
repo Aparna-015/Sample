@@ -24,8 +24,8 @@ const Demo = () => {
         <div key={item.id}>
           <h1>{item?.title}</h1>
 
-          <img src={item?.image} alt="no-image" width="100px" />
-          {/* <button onClick={}>View more</button> */}
+          <img src={item?.image} alt="no-image" width="100px" /><br/>
+           <button >View more</button> 
           <Card data={item} />
         </div>
       ))}

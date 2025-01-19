@@ -1,16 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Card = ({data}) => {
-
-    
+const Card = ({ data }) => {
   return (
-    <div className='section'>
-        {
-<h1>{data.description}</h1>
-
-        }
+    <div className="section">
+      <h2>{data?.price}</h2>
+      <h2>{data?.description}</h2>
+      <h2>{data?.category}</h2>
+      <h2>{data?.rating?.rate}</h2>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
