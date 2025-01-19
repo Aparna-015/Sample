@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const Demo = () => {
   const [viewdetails, setViewdetails] = useState(false);
 
-  const handleclick = () => {
-    setViewdetails(true);
-  };
+  const handleclick=()=>{
+    setViewdetails(!viewdetails)
+  }
 
   const data = [
     {
@@ -24,30 +24,31 @@ const Demo = () => {
   ];
 
   return (
+
+
     <div className="container">
       {data.map((item) => (
         <div key={item.id}>
-        <h1>{item?.title}</h1>
-        <img src={item?.image} alt="no-image" width="100px" /><br />
-
-
-          {
-
-         !viewdetails ? (
-            <button onClick={handleclick}>View more</button>
-          ) : (
-            <>
-              <h1>{item?.price}</h1>
-              <h1>{item?.description}</h1>
-              <h1>{item?.category}</h1>
-              <h1>{item?.rating?.rate}</h1>
-            </>
-          )
+          <h1>{item?.title}</h1>
+          <img src={item.image} alt="product" width="100px" />
+          <br />
           
-          }
+  <button onClick={handleclick} >
+
+            {viewdetails ? "Hide details" : "View more"}
+
+          </button>
+
+          {viewdetails && (
+            <div>
+              <h2>Price: ${item.price}</h2>
+              <p>{item.description}</p>
+              <p>Category: {item.category}</p>
+              <p>Rating: {item.rating.rate}</p>
+            </div>
+          )}
         </div>
       ))}
-      
     </div>
   );
 };
