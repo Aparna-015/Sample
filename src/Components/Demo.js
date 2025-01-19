@@ -41,10 +41,10 @@ const Demo = () => {
 
           {viewdetails && (
             <div>
-              <h2>Price: ${item.price}</h2>
+              <h1>{item.price}</h1>
               <p>{item.description}</p>
-              <p>Category: {item.category}</p>
-              <p>Rating: {item.rating.rate}</p>
+              <p> {item.category}</p>
+              <p> {item.rating.rate}</p>
             </div>
           )}
         </div>
